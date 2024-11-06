@@ -130,6 +130,8 @@ def create_root(start: Callable[[], None], destroy: Callable[[], None]) -> ctk.C
     load_switch_states()
 
     ctk.deactivate_automatic_dpi_awareness()
+    ctk.set_widget_scaling(modules.globals.ui_scale)  # widget dimensions and text size
+    ctk.set_window_scaling(modules.globals.ui_scale)  # window geometry dimensions
     ctk.set_appearance_mode("system")
     ctk.set_default_color_theme(resolve_relative_path("ui.json"))
 
